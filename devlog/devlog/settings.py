@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'devlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	'ENGINE': 'django.db.backends.mysql',
+	'NAME': 'devlog',
+	'USER': 'root',
+	'PASSWORD':'khs7928',
+	'HOST':'localhost',
+	'PORT':'3306'
     }
 }
 
@@ -105,7 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 USE_I18N = True
 
