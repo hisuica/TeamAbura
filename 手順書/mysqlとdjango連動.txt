@@ -1,0 +1,67 @@
+﻿mysqlのインストールが完了してから
+
+ルートユーザー初期パスワード設定
+>> mysql -uroot;
+
+>> use mysql;
+>> update user set password=password('パスワード') where user='root'
+
+変更を適用する
+>> flush privileges;
+
+変更してからのログイン
+>> mysql -uroot -p
+🔓パスワード入力！
+
+データベースを生成する
+>> show databases;
+
+>> create database devlog;
+
+>> show databases;
+
+Ctrl + cでDBを終了、DjangoでMysqlを使うための設定を行う。
+
+開発ディレクトリへ移動、devlogに入る。
+$ vim settings.py
+
+----------------------------------------
+DATABASES = {
+      'default':{
+            'ENGINE': 'django.db.backend.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')      
+      }
+}
+----------------------------------------
+となっているところを以下のように修正する。
+----------------------------------------
+DATABASES = {
+      'default':{
+            #'ENGINE': 'django.db.backend.sqlite3',
+            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'devlog',
+            'USER': '*USERNAME*',
+            'PASSWORD': '*PASSWORD*',
+            'HOST': 'localhost',
+            'PORT': '3306'      
+      }
+}
+-----------------------------------------
+作成が終わったら、保存する。
+
+managy.pyのあるディレクトリへ移動してから
+
+$ python manage.py migrate
+
+と入力すると、devlogデータベースに基本テーブルが自動生成される。
+
+$ mysql -uroot -p
+🔓password
+
+>> use devlog;
+
+>> show tables;
+
+テーブルが生成されていることを確認する。
+これで準備は完了。
