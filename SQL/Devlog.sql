@@ -23,7 +23,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `posts` (
 	`ID`	bigint(20)	NOT NULL,
-	`post_author`	bigint(20)	NOT NULL	DEFAULT '0',
+	`post_author`	varchar(20)	NOT NULL	DEFAULT '0',
 	`post_date`	datetime	NOT NULL	DEFAULT '0000-00-00 00:00:00',
 	`post_content`	longtext	NOT NULL,
 	`post_title`	text	NOT NULL,
