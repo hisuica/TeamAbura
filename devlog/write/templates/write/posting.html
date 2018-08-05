@@ -1,0 +1,12 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'write:save' post.ID %}" method="post">
+{% csrf_token %}
+author : <input type="textbox" name="author" value="{{ post.post_author }}" /><br />
+categoryid2 : <input type="textbox" name="categoryid2"  value="{{ post.category_ID2 }}" /><br />
+pass : <input type="textbox" name="password"  value="{{ post.post_password }}" /><br />
+title : <input type="textbox" name="title"  value="{{ post.post_title }}" /><br />
+content : <input type="textbox" name="content"  value="{{ post.post_content }}" /><br />
+<br />
+<input type="submit" value="write" />
+</form>
