@@ -1,12 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <!-- {% load static %} for django-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" for django /> -->
+  <link rel="stylesheet" type="text/css" href="../../static/blog/style.css" />
+  <title>Team Abura Devlog</title>
 </head>
 <body>
-  hello world
+  <div class="sidebar">
+    <div class="logo">
+      Team Abura
+    </div>
+    <div class="user-info">
+      <!-- ログアウト中 -->
+      <ul>
+        <li><a href="#"><i>Login Icon</i>Sign in</a></li>
+        <li><a href="#"><i>SignUp Icon</i>Sign up</a></li>
+      </ul>
+      <!-- ログアウト中 -->
+      <!-- ログオン中 -->
+      <a href="#">
+        <img src="#" alt="ユーザーアイコン">
+      </a>
+      <a href="#" class="nickname"></a>
+      <i>Logout Icon</i>
+      <!-- ログオン中 -->
+      <div class="user-tools">
+        <!-- 管理者の場合のみ表示 -->
+        <a href="#">Write Post...</a>
+        <a href="#">To Admin Page</a>
+        <!-- 管理者の場合のみ表示 -->
+      </div>
+    </div>
+    <ul class="sidebar-categories">
+      <li><a href="#">categories1</a></li>
+      <li><a href="#">categories2</a></li>
+      <li><a href="#">categories3</a></li>
+    </ul>
+  </div>
+  <div class="main index">
+    <!-- 記事Preview-Boxこのボックスを繰り返し表示 -->
+    <div class="article-preview-box">
+      <div class="article-preview-item">
+        <div class="article-preview-title-wrapper">
+          <h3 class="articel-preview-title">Article Title</h3>
+          <div class="article-date">
+            2018-08-06 20:10:00
+          </div>
+        </div>
+        <article class="article-preview-content">
+          Article Content Blah Blah
+
+          Article Content Blah Blah Article Content Blah Blah Article Content Blah Blah Article Content Blah Blah Article Content Blah Blah Article Content Blah Blah
+        </article>
+        <div class="article-preview-footer">
+          <i>
+            Icon
+          </i>
+          <a href="#" class="nickname">
+            Author
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 記事Preview-Box -->
+    <hr>
+    <footer>
+      Footer Context
+    </footer>
+  </div>
 </body>
 </html>
