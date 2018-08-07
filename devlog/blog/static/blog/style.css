@@ -8,4 +8,11 @@
 }
 .sidebar{
   float: left;
+  background-color: lightgray;
+}
+.main{
+  width: 70%;
+}
+.article-preview-box{
+  background-color: #ffdead;
 }
