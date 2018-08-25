@@ -2,17 +2,33 @@
     overflow: auto;
 }
 .clearfix::after{
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 .sidebar{
-  float: left;
-  background-color: lightgray;
+    float: left;
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    display: block;
 }
 .main{
-  width: 70%;
+    float: left;
+    width: 70%;
+    display: block;
+    position: absolute;
+    left: 280px;
 }
 .article-preview-box{
-  background-color: #ffdead;
+    background-color: #ffdead;
+}
+footer{
+    position: fixed;
+    left: 280px;
+    bottom: 0;
+    width: 70%;
+    background-color: lightgreen;
 }
